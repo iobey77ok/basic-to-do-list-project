@@ -1,5 +1,7 @@
 package random;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ToDoList {
     private ArrayList<String> tasks;
@@ -20,7 +22,6 @@ public class ToDoList {
         } else {
             System.out.println("Invalid index, please type again");
         }
-
     }
 
     public void displayTask(){
@@ -33,9 +34,20 @@ public class ToDoList {
 
     public static void main(String[] args){
         ToDoList myList = new ToDoList();
-        myList.addTask("Finish homework");
+        Scanner obj = new Scanner(System.in);
+        String choiceNumber;
+
+        do {
+            System.out.println("Options: [1] Add Task [2] Remove Task [3] Display Tasks [4] Exit");
+            System.out.print("Please Choose your option: ");
+            choiceNumber = obj.nextLine();
+
+        } while (!choiceNumber.equals("4"));
+
+
+        /* myList.addTask("Finish homework");
         myList.addTask("Go grocery shopping");
         myList.addTask("Call a friend");
-        myList.displayTask();
+        myList.displayTask(); */
     }
 }
